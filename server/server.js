@@ -12,7 +12,12 @@ app.use(bodyParser.json());
 
 app.post('/drinks', (req, res) => {
 	const drink = new Drink({
-		name: req.body.name
+		name: req.body.name,
+		description: req.body.description,
+		weather: req.body.weather,
+		ingredients: req.body.ingredients,
+		instructions: req.body.instructions,
+		alcoholic: req.body.alcoholic
 	});
 
 	drink.save().then((doc) => {

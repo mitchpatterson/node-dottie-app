@@ -6,18 +6,32 @@ const Drink = mongoose.model('Drink', {
 		required: true
 	},
 	description: {
-		type: String
+		type: String,
+		required: true
 	},
 	weather: {
-		minTemp: Number,
-		maxTemp: Number,
-		season: String
+		minTemp: {
+			type: Number,
+			required: true
+		},
+		maxTemp: {
+			type: Number,
+			required: true
+		},
+		season: String,
+		conditions: [{type: String}]
 	},
 	ingredients: {
-		type: Array
+		type: Array,
+		required: true
+	},
+	instructions: {
+		type: [{type: String}],
+		required: true
 	},
 	alcoholic: {
-		type: Boolean
+		type: Boolean,
+		required: true
 	}
 });
 
